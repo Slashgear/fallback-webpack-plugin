@@ -5,6 +5,14 @@
   "repository": "https://github.com/Slashgear/fallback-webpack-plugin",
   "author": "Slashgear <antoine395.caron@gmail.com>",
   "license": "MIT",
+  "keywords": [
+    "webpack",
+    "plugin",
+    "code splitting",
+    "fallback",
+    "replacement",
+    "configuration"
+  ],
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
