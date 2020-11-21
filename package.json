@@ -1,6 +1,6 @@
 {
   "name": "fallback-webpack-plugin",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "main": "src/index.js",
   "repository": "https://github.com/Slashgear/fallback-webpack-plugin",
   "author": "Slashgear <antoine395.caron@gmail.com>",
