@@ -14,8 +14,8 @@ class FallbackWebpackPlugin {
   }
 
   apply(compiler) {
-    compiler.hooks.normalModuleFactory.tap("FallbackWebpackPlugin", nmf => {
-      nmf.hooks.afterResolve.tap("FallbackWebpackPlugin", result => {
+    compiler.hooks.normalModuleFactory.tap("FallbackWebpackPlugin", (nmf) => {
+      nmf.hooks.afterResolve.tap("FallbackWebpackPlugin", (result) => {
         if (!result) return;
 
         // if the variant exists for the current customer

@@ -21,14 +21,14 @@ module.exports = {
   entry: "index.js",
   output: {
     path: __dirname + "/dist",
-    filename: "index.bundle.js"
+    filename: "index.bundle.js",
   },
   plugins: [
     new FallbackWebpackPlugin(
       "branchDirectory",
       "currentVariant",
       "fallbackDir"
-    )
-  ]
+    ),
+  ],
 };
 ```
