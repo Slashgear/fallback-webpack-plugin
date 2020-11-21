@@ -1,5 +1,5 @@
 {
-  "name": "fallback-webpack-plugin",
+  "name": "@slashgear/fallback-webpack-plugin",
   "version": "1.0.6-2",
   "main": "src/index.js",
   "repository": "https://github.com/Slashgear/fallback-webpack-plugin",
