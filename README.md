@@ -1,4 +1,4 @@
-# Fallback webpack plugin [![Build Status](https://travis-ci.org/Slashgear/fallback-webpack-plugin.svg?branch=master)](https://travis-ci.org/Slashgear/fallback-webpack-plugin)
+# Fallback webpack plugin
 
 Plugin that simplifies module replacement with a fallback.
 
