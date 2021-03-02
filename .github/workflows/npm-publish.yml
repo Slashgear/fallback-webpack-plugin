@@ -13,7 +13,6 @@ jobs:
         with:
           node-version: 12
       - run: yarn install
-      - run: yarn test
 
   publish-npm:
     needs: build
@@ -25,6 +24,7 @@ jobs:
           node-version: 12
           registry-url: https://registry.npmjs.org/
       - run: yarn install
+      - run: yarn build
       - run: yarn publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.npm_token}}
@@ -40,6 +40,7 @@ jobs:
           registry-url: https://npm.pkg.github.com/
       - run: jq --arg package "@slashgear/fallback-webpack-plugin" '.name = $package' package.json > package-changed.json && mv package-changed.json package.json
       - run: yarn install
+      - run: yarn build
       - run: yarn --registry=https://npm.pkg.github.com/ publish
         env:
           NODE_AUTH_TOKEN: ${{secrets.GITHUB_TOKEN}}

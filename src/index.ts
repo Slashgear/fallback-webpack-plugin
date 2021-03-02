@@ -1,19 +1,29 @@
-const fs = require("fs");
+import fs from "fs";
+import { Compiler } from "webpack";
 
 class FallbackWebpackPlugin {
+  private currentSubdirectoryName: string;
+  private detectPattern: RegExp;
+  private replacePattern: RegExp;
+
+  /**
+   * @param branchDirectory Directory to scan in which it should replace or fallback path
+   * @param currentSubdirectoryName Current subdir used in your implementation
+   * @param fallBackDirectoryName fallback directory name for your default implementation
+   */
   constructor(
-    branchDirectory,
-    currentSubdirectoryName,
+    branchDirectory: string,
+    currentSubdirectoryName: string,
     fallBackDirectoryName = "default"
   ) {
     this.currentSubdirectoryName = currentSubdirectoryName;
     this.detectPattern = new RegExp(
-      `\/${branchDirectory}\/${fallBackDirectoryName}\/`
+      `/${branchDirectory}/${fallBackDirectoryName}/`
     );
-    this.replacePattern = new RegExp(`\/${fallBackDirectoryName}\/`);
+    this.replacePattern = new RegExp(`/${fallBackDirectoryName}/`);
   }
 
-  apply(compiler) {
+  apply(compiler: Compiler): void {
     compiler.hooks.normalModuleFactory.tap("FallbackWebpackPlugin", (nmf) => {
       nmf.hooks.afterResolve.tap("FallbackWebpackPlugin", (result) => {
         if (!result) return;
@@ -36,4 +46,4 @@ class FallbackWebpackPlugin {
   }
 }
 
-module.exports = FallbackWebpackPlugin;
+export = FallbackWebpackPlugin;

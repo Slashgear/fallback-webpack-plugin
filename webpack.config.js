@@ -1,10 +1,10 @@
-const FallbackWebpackPlugin = require("./src");
+const FallbackWebpackPlugin = require("./dist");
 
 module.exports = {
   entry: __dirname + "/test/src/index.js",
   output: {
     path: __dirname + "/test/dist",
-    filename: `index.${process.env.TYPE}.js`
+    filename: `index.${process.env.TYPE}.js`,
   },
-  plugins: [new FallbackWebpackPlugin("config", process.env.TYPE, "A")]
+  plugins: [new FallbackWebpackPlugin("config", process.env.TYPE, "A")],
 };
