@@ -1,0 +1,4 @@
+test/
+.github/
+webpack.config.js
+tsconfig.json
